@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurslar | Sarget</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Courses Page Styles */
+    .courses-hero {
+      background-color: #1A1A1A;
+      color: white;
+      padding: 80px 0;
+    }
+    
+    .courses-hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .courses-hero-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .courses-hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+    }
+    
+    .courses-filters {
+      background-color: white;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .filters-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .filter-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .filter-button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-button:hover, .filter-button.active {
+      background-color: #FFD700;
+      border-color: #FFD700;
+      color: black;
+    }
+    
+    .filter-sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .sort-select {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+      padding: 50px 0;
+    }
+    
+    @media (min-width: 768px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .course-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .course-image {
+      height: 200px;
+      position: relative;
+    }
+    
+    .course-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .course-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: rgba(255, 215, 0, 0.9);
+      color: black;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .course-content {
+      padding: 20px;
+    }
+    
+    .course-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .course-description {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+    
+    .course-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+    
+    .price-amount {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+    
+    .course-link {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #FFD700;
+      color: black;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    
+    .course-link:hover {
+      background-color: #E6C200;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+      gap: 10px;
+    }
+    
+    .pagination-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .pagination-item:hover, .pagination-item.active {
+      background-color: #FFD700;
+      border-color: #FFD700;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <div class="logo-circle"></div>
+          <span>Sarget</span>
+        </a>
+        
+        <nav class="nav-desktop">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+            <li><a href="courses.html" class="nav-link active">Kurslar</a></li>
+            <li><a href="about.html" class="nav-link">Biz haqimizda</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Aloqa</a></li>
+          </ul>
+        </nav>
+        
+        <div id="authButtons" class="auth-buttons">
+          <a href="login.html" class="btn btn-ghost btn-sm">Kirish</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Ro'yxatdan o'tish</a>
+        </div>
+        
+        <div id="userMenu" class="user-menu hidden">
+          <button class="user-menu-button">
+            <i class="fas fa-user-circle"></i>
+            <span id="userName">Foydalanuvchi</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="user-dropdown">
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profile.html"><i class="fas fa-user"></i> Profil</a>
+            <a href="my-courses.html"><i class="fas fa-graduation-cap"></i> Mening kurslarim</a>
+            <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Chiqish</a>
+          </div>
+        </div>
+        
+        <button id="mobileMenuButton" class="mobile-menu-button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="container">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Bosh sahifa</a></li>
+        <li><a href="courses.html" class="active">Kurslar</a></li>
+        <li><a href="about.html">Biz haqimizda</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Aloqa</a></li>
+      </ul>
+      
+      <div id="mobileAuth" class="mobile-auth">
+        <a href="login.html" class="btn btn-ghost btn-block">Kirish</a>
+        <a href="register.html" class="btn btn-primary btn-block">Ro'yxatdan o'tish</a>
+      </div>
+      
+      <div id="mobileUser" class="mobile-user hidden">
+        <a href="dashboard.html" class="btn btn-ghost btn-block">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+        <a href="profile.html" class="btn btn-ghost btn-block">
+          <i class="fas fa-user"></i> Profil
+        </a>
+        <a href="my-courses.html" class="btn btn-ghost btn-block">
+          <i class="fas fa-graduation-cap"></i> Mening kurslarim
+        </a>
+        <a href="#" id="mobileLogout" class="btn btn-ghost btn-block">
+          <i class="fas fa-sign-out-alt"></i> Chiqish
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses Hero -->
+  <section class="courses-hero">
+    <div class="container">
+      <div class="courses-hero-content">
+        <h1 class="courses-hero-title">Bizning kurslar</h1>
+        <p class="courses-hero-description">
+          Zamonaviy kasblarni o'rganish va IT sohasida o'z o'rningizni topish uchun kurslarimiz bilan tanishing. Biz bilan kelajak kasblarini o'rganing va muvaffaqiyatga erishing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Filters -->
+  <section class="courses-filters">
+    <div class="container">
+      <div class="filters-container">
+        <div class="filter-categories">
+          <button class="filter-button active">Barcha kurslar</button>
+          <button class="filter-button">Dasturlash</button>
+          <button class="filter-button">Marketing</button>
+          <button class="filter-button">Dizayn</button>
+          <button class="filter-button">Asosiy ko'nikmalar</button>
+        </div>
+        <div class="filter-sort">
+          <span>Saralash:</span>
+          <select class="sort-select">
+            <option>Mashhurlik</option>
+            <option>Narx: Pastdan yuqoriga</option>
+            <option>Narx: Yuqoridan pastga</option>
+            <option>Davomiyligi</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Grid -->
+  <section class="courses-section">
+    <div class="container">
+      <div class="courses-grid">
+        <!-- Course 1 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Frontend dasturlash">
+            <div class="course-category">Dasturlash</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Frontend dasturlash</h3>
+            <p class="course-description">
+              Zamonaviy veb-saytlar yaratishni o'rganing: HTML, CSS, JavaScript, React va boshqa texnologiyalar.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 6 oy</span>
+              <span><i class="fas fa-signal"></i> O'rta</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">2,400,000 so'm</div>
+              <a href="courses/frontend.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Backend dasturlash">
+            <div class="course-category">Dasturlash</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Backend dasturlash</h3>
+            <p class="course-description">
+              Server tomonida ishlaydigan dasturlarni yaratishni o'rganing: Node.js, Python, SQL va boshqalar.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 6 oy</span>
+              <span><i class="fas fa-signal"></i> O'rta</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">2,400,000 so'm</div>
+              <a href="courses/backend.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="SMM mutaxassisi">
+            <div class="course-category">Marketing</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">SMM mutaxassisi</h3>
+            <p class="course-description">
+              Ijtimoiy tarmoqlar orqali biznesni rivojlantirish strategiyalarini o'rganing.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 3 oy</span>
+              <span><i class="fas fa-signal"></i> Boshlang'ich</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">1,800,000 so'm</div>
+              <a href="courses/smm.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Target reklama">
+            <div class="course-category">Marketing</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Target reklama</h3>
+            <p class="course-description">
+              Ijtimoiy tarmoqlarda maqsadli reklama kampaniyalarini yaratish va boshqarishni o'rganing.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 2 oy</span>
+              <span><i class="fas fa-signal"></i> Boshlang'ich</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">1,500,000 so'm</div>
+              <a href="courses/target.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Mobilografiya">
+            <div class="course-category">Dizayn</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Mobilografiya</h3>
+            <p class="course-description">
+              Smartfonda professional darajada suratga va videoga olishni o'rganing.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 2 oy</span>
+              <span><i class="fas fa-signal"></i> Boshlang'ich</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">1,200,000 so'm</div>
+              <a href="courses/mobilografiya.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Grafik dizayn">
+            <div class="course-category">Dizayn</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Grafik dizayn</h3>
+            <p class="course-description">
+              Photoshop, Illustrator va boshqa dasturlar yordamida grafik dizayn asoslarini o'rganing.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 4 oy</span>
+              <span><i class="fas fa-signal"></i> Boshlang'ich</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">2,000,000 so'm</div>
+              <a href="courses/grafik-dizayn.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Kompyuter savodxonligi">
+            <div class="course-category">Asosiy ko'nikmalar</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">Kompyuter savodxonligi</h3>
+            <p class="course-description">
+              Kompyuter va internet bilan ishlash asoslarini o'rganing.
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 1 oy</span>
+              <span><i class="fas fa-signal"></i> Boshlang'ich</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">800,000 so'm</div>
+              <a href="courses/kompyuter-savodxonligi.html" class="course-link">Batafsil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 8 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="UI/UX dizayn">
+            <div class="course-category">Dizayn</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">...</h3>
+            <p class="course-description">
+             ...
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> ...</span>
+              <span><i class="fas fa-signal"></i> O'rta</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">so'm</div>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 9 -->
+        <div class="course-card">
+          <div class="course-image">
+            <img src="public/sarget2.jpg" alt="Flutter dasturlash">
+            <div class="course-category">Dasturlash</div>
+          </div>
+          <div class="course-content">
+            <h3 class="course-title">...</h3>
+            <p class="course-description">
+              ...
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> ...</span>
+              <span><i class="fas fa-signal"></i> ...</span>
+            </div>
+            <div class="course-price">
+              <div class="price-amount">...</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <div class="pagination-item active">1</div>
+        <div class="pagination-item">2</div>
+        <div class="pagination-item">3</div>
+        <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Kelajagingizni bugun boshlang</h2>
+        <p class="cta-description">
+          Bizning kurslarimiz orqali zamonaviy ko'nikmalarni egallang va IT sohasida muvaffaqiyatga erishing.
+        </p>
+        <div class="cta-buttons">
+          <a href="register.html" class="btn btn-primary btn-lg">Ro'yxatdan o'tish</a>
+          <a href="contact.html" class="btn btn-outline-light btn-lg">Biz bilan bog'lanish</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <div class="logo-circle"></div>
+            <span>Sarget</span>
+          </div>
+          <p class="footer-description">
+            Sarget - bu zamonaviy kasblarni o'rgatuvchi ta'lim platformasi. Biz bilan kelajak kasblarini o'rganing va muvaffaqiyatga erishing.
+          </p>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Toshkent sh., Shayxontohur tumani, Beruniy ko'chasi, 3A-uy</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+998 90 123 45 67</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@sarget.uz</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Kurslar</h3>
+          <div class="footer-links">
+            <a href="courses/frontend.html">Frontend dasturlash</a>
+            <a href="courses/backend.html">Backend dasturlash</a>
+            <a href="courses/smm.html">SMM</a>
+            <a href="courses/target.html">Target reklama</a>
+            <a href="courses/mobilografiya.html">Mobilografiya</a>
+            <a href="courses/grafik-dizayn.html">Grafik dizayn</a>
+            <a href="courses/kompyuter-savodxonligi.html">Kompyuter savodxonligi</a>
+            <a href="courses.html">Barcha kurslar</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Kompaniya</h3>
+          <div class="footer-links">
+            <a href="about.html">Biz haqimizda</a>
+            <a href="blog.html">Blog</a>
+           
+            <a href="contact.html">Aloqa</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Yangiliklardan xabardor bo'ling</h3>
+          <p class="footer-description">
+            Yangiliklardan xabardor bo'lish uchun obuna bo'ling
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email manzilingiz" required>
+            <button type="submit" class="btn btn-primary">Obuna bo'lish</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+        </div>
+        
+        <div class="copyright">
+          <p>&copy; <span id="currentYear">2023</span> Sarget. Barcha huquqlar himoyalangan.</p>
+          <div class="legal-links">
+            <a href="terms.html">Foydalanish shartlari</a>
+            <a href="privacy.html">Maxfiylik siyosati</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filter buttons functionality
+      const filterButtons = document.querySelectorAll('.filter-button');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+        });
+      });
+      
+      // Pagination functionality
+      const paginationItems = document.querySelectorAll('.pagination-item');
+      
+      paginationItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          paginationItems.forEach(item => item.classList.remove('active'));
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+        });
+      });
+      
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
+

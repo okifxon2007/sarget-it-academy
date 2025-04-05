@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML asoslari - Frontend Dasturlash Kursi | Sarget</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/course-content.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+      <div class="container">
+          <div class="header-content">
+              <a href="../../index.html" class="logo">
+                  <div class="logo-circle"></div>
+                  <span>Sarget</span>
+              </a>
+              
+              <nav class="nav-desktop">
+                  <ul class="nav-links">
+                      <li><a href="../../index.html" class="nav-link">Bosh sahifa</a></li>
+                      <li><a href="../../courses.html" class="nav-link active">Kurslar</a></li>
+                      <li><a href="../../success-stories.html" class="nav-link">Muvaffaqiyat tarixi</a></li>
+                      <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                      <li><a href="../../contact.html" class="nav-link">Aloqa</a></li>
+                  </ul>
+              </nav>
+              
+              <div id="authButtons" class="auth-buttons">
+                  <a href="../../login.html" class="btn btn-ghost btn-sm">Kirish</a>
+                  <a href="../../register.html" class="btn btn-primary btn-sm">Ro'yxatdan o'tish</a>
+              </div>
+              
+              <div id="userMenu" class="user-menu hidden">
+                  <button class="user-menu-button">
+                      <i class="fas fa-user-circle"></i>
+                      <span id="userName">Foydalanuvchi</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="user-dropdown">
+                      <a href="../../dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                      <a href="../../profile.html"><i class="fas fa-user"></i> Profil</a>
+                      <a href="../../my-courses.html"><i class="fas fa-graduation-cap"></i> Mening kurslarim</a>
+                      <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Chiqish</a>
+                  </div>
+              </div>
+              
+              <button id="mobileMenuButton" class="mobile-menu-button">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+      </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+      <div class="container">
+          <ul class="mobile-nav-links">
+              <li><a href="../../index.html">Bosh sahifa</a></li>
+              <li><a href="../../courses.html" class="active">Kurslar</a></li>
+              <li><a href="../../success-stories.html">Muvaffaqiyat tarixi</a></li>
+              <li><a href="../../blog.html">Blog</a></li>
+              <li><a href="../../contact.html">Aloqa</a></li>
+          </ul>
+          
+          <div id="mobileAuth" class="mobile-auth">
+              <a href="../../login.html" class="btn btn-ghost btn-block">Kirish</a>
+              <a href="../../register.html" class="btn btn-primary btn-block">Ro'yxatdan o'tish</a>
+          </div>
+          
+          <div id="mobileUser" class="mobile-user hidden">
+              <a href="../../dashboard.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-tachometer-alt"></i> Dashboard
+              </a>
+              <a href="../../profile.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-user"></i> Profil
+              </a>
+              <a href="../../my-courses.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-graduation-cap"></i> Mening kurslarim
+              </a>
+              <a href="#" id="mobileLogout" class="btn btn-ghost btn-block">
+                  <i class="fas fa-sign-out-alt"></i> Chiqish
+              </a>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Course Content -->
+  <div class="course-content-container">
+      <div class="container">
+          <a href="../frontend.html" class="back-link">
+              <i class="fas fa-arrow-left"></i> Kursga qaytish
+          </a>
+          
+          <div class="course-content-grid">
+              <div class="main-content">
+                  <div class="video-container">
+                      <video class="video-player" controls>
+                          <source src="../../videos/html-basics.mp4" type="video/mp4">
+                          Sizning brauzeringiz video tegini qo'llab-quvvatlamaydi.
+                      </video>
+                  </div>
+                  
+                  <h1 class="video-title">HTML asoslari: Veb-sahifalar tuzilishi</h1>
+                  <div class="video-meta">
+                      <span><i class="fas fa-clock"></i> 45 daqiqa</span>
+                      <span><i class="fas fa-calendar"></i> 10-May, 2023</span>
+                      <span><i class="fas fa-user"></i> Aziz Rahimov</span>
+                  </div>
+                  
+                  <div class="course-progress-container">
+                      <div class="course-progress-header">
+                          <span class="progress-label">Kurs jarayoni</span>
+                          <span class="progress-value">15%</span>
+                      </div>
+                      <div class="progress-bar">
+                          <div class="progress-fill" style="width: 15%;"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="video-description">
+                      <p>
+                          Ushbu darsda HTML asoslari haqida o'rganamiz. HTML (HyperText Markup Language) - bu veb-sahifalar yaratish uchun ishlatiladigan belgilash tili. Dars davomida quyidagi mavzularni ko'rib chiqamiz:
+                      </p>
+                      <ul>
+                          <li>HTML nima va u qanday ishlaydi</li>
+                          <li>HTML hujjat tuzilishi</li>
+                          <li>Asosiy HTML teglari</li>
+                          <li>HTML atributlari</li>
+                          <li>Birinchi HTML sahifasini yaratish</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="video-actions">
+                      <button class="btn btn-primary">
+                          <i class="fas fa-check"></i> Darsni tugatdim
+                      </button>
+                      <button class="btn btn-outline">
+                          <i class="fas fa-bookmark"></i> Saqlab qo'yish
+                      </button>
+                      <button class="btn btn-outline">
+                          <i class="fas fa-share"></i> Ulashish
+                      </button>
+                  </div>
+                  
+                  <div class="lesson-tabs">
+                      <button class="lesson-tab-button active" data-tab="lessons">Darslar</button>
+                      <button class="lesson-tab-button" data-tab="resources">Materiallar</button>
+                      <button class="lesson-tab-button" data-tab="notes">Mening qaydlarim</button>
+                  </div>
+                  
+                  <div id="lessons-tab" class="lesson-tab-content active">
+                      <div class="lessons-list">
+                          <div class="lesson-item active">
+                              <div class="lesson-icon">
+                                  <i class="fas fa-play-circle"></i>
+                              </div>
+                              <div class="lesson-info">
+                                  <div class="lesson-title">HTML asoslari: Veb-sahifalar tuzilishi</div>
+                                  <div class="lesson-duration">45 daqiqa</div>
+                              </div>
+                          </div>
+                          
+                          <div class="lesson-item">
+                              <div class="lesson-icon">
+                                  <i class="fas fa-play-circle"></i>
+                              </div>
+                              <div class="lesson-info">
+                                  <div class="lesson-title">HTML teglar va atributlar</div>
+                                  <div class="lesson-duration">1 soat</div>
+                              </div>
+                          </div>
+                          
+                          <div class="lesson-item">
+                              <div class="lesson-icon">
+                                  <i class="fas fa-file-alt"></i>
+                              </div>
+                              <div class="lesson-info">
+                                  <div class="lesson-title">Amaliy mashg'ulot: Birinchi HTML sahifasi</div>
+                                  <div class="lesson-duration">2 soat</div>
+                              </div>
+                          </div>
+                          
+                          <div class="lesson-item">
+                              <div class="lesson-icon">
+                                  <i class="fas fa-play-circle"></i>
+                              </div>
+                              <div class="lesson-info">
+                                  <div class="lesson-title">CSS haqida umumiy ma'lumot</div>
+                                  <div class="lesson-duration">45 daqiqa</div>
+                              </div>
+                          </div>
+                          
+                          <div class="lesson-item">
+                              <div class="lesson-icon">
+                                  <i class="fas fa-play-circle"></i>
+                              </div>
+                              <div class="lesson-info">
+                                  <div class="lesson-title">CSS selektorlar va xususiyatlar</div>
+                                  <div class="lesson-duration">1 soat</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div id="resources-tab" class="lesson-tab-content">
+                      <div class="resources-list">
+                          <div class="resource-item">
+                              <div class="resource-icon">
+                                  <i class="fas fa-file-pdf"></i>
+                              </div>
+                              <div class="resource-info">
+                                  <div class="resource-title">HTML asoslari bo'yicha qo'llanma</div>
+                                  <div class="resource-size">2.5 MB</div>
+                              </div>
+                              <button class="btn btn-sm btn-outline">
+                                  <i class="fas fa-download"></i> Yuklab olish
+                              </button>
+                          </div>
+                          
+                          <div class="resource-item">
+                              <div class="resource-icon">
+                                  <i class="fas fa-file-code"></i>
+                              </div>
+                              <div class="resource-info">
+                                  <div class="resource-title">HTML namuna kodlari</div>
+                                  <div class="resource-size">1.2 MB</div>
+                              </div>
+                              <button class="btn btn-sm btn-outline">
+                                  <i class="fas fa-download"></i> Yuklab olish
+                              </button>
+                          </div>
+                          
+                          <div class="resource-item">
+                              <div class="resource-icon">
+                                  <i class="fas fa-link"></i>
+                              </div>
+                              <div class="resource-info">
+                                  <div class="resource-title">HTML bo'yicha qo'shimcha manbalar</div>
+                                  <div class="resource-size">Havola</div>
+                              </div>
+                              <a href="#" class="btn btn-sm btn-outline">
+                                  <i class="fas fa-external-link-alt"></i> Ochish
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div id="notes-tab" class="lesson-tab-content">
+                      <div class="notes-container">
+                          <textarea class="notes-textarea" placeholder="Dars bo'yicha qaydlaringizni yozing..."></textarea>
+                          <button class="btn btn-primary">
+                              <i class="fas fa-save"></i> Saqlash
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="course-sidebar">
+                  <div class="course-info-card">
+                      <div class="course-info-header">
+                          <h3>Kurs ma'lumotlari</h3>
+                      </div>
+                      <div class="course-info-content">
+                          <div class="course-info-list">
+                              <div class="course-info-item">
+                                  <div class="info-icon">
+                                      <i class="fas fa-book"></i>
+                                  </div>
+                                  <div class="info-text">
+                                      <div class="info-label">Kurs nomi</div>
+                                      <div class="info-value">Frontend Dasturlash</div>
+                                  </div>
+                              </div>
+                              
+                              <div class="course-info-item">
+                                  <div class="info-icon">
+                                      <i class="fas fa-user"></i>
+                                  </div>
+                                  <div class="info-text">
+                                      <div class="info-label">O'qituvchi</div>
+                                      <div class="info-value">Aziz Rahimov</div>
+                                  </div>
+                              </div>
+                              
+                              <div class="course-info-item">
+                                  <div class="info-icon">
+                                      <i class="fas fa-clock"></i>
+                                  </div>
+                                  <div class="info-text">
+                                      <div class="info-label">Davomiyligi</div>
+                                      <div class="info-value">6 oy</div>
+                                  </div>
+                              </div>
+                              
+                              <div class="course-info-item">
+                                  <div class="info-icon">
+                                      <i class="fas fa-graduation-cap"></i>
+                                  </div>
+                                  <div class="info-text">
+                                      <div class="info-label">Tugatilgan</div>
+                                      <div class="info-value">15%</div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="course-navigation">
+                              <button class="nav-button disabled">
+                                  <i class="fas fa-arrow-left"></i> Oldingi
+                              </button>
+                              <button class="nav-button">
+                                  Keyingi <i class="fas fa-arrow-right"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="help-card">
+                      <h3>Yordam kerakmi?</h3>
+                      <p>
+                          Agar sizda savollar yoki muammolar bo'lsa, bizning qo'llab-quvvatlash jamoamiz sizga yordam berishga tayyor.
+                      </p>
+                      <button class="btn btn-outline btn-block">
+                          <i class="fas fa-headset"></i> Yordam so'rash
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <script src="../../js/main.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Tab switching
+          const tabButtons = document.querySelectorAll('.lesson-tab-button');
+          const tabContents = document.querySelectorAll('.lesson-tab-content');
+          
+          tabButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                  // Remove active class from all buttons and contents
+                  tabButtons.forEach(btn => btn.classList.remove('active'));
+                  tabContents.forEach(content => content.classList.remove('active'));
+                  
+                  // Add active class to clicked button and corresponding content
+                  this.classList.add('active');
+                  const tabId = this.getAttribute('data-tab') + '-tab';
+                  document.getElementById(tabId).classList.add('active');
+              });
+          });
+          
+          // Lesson item click
+          const lessonItems = document.querySelectorAll('.lesson-item');
+          
+          lessonItems.forEach(item => {
+              item.addEventListener('click', function() {
+                  // In a real app, this would navigate to the selected lesson
+                  // For demo, we'll just update the active class
+                  lessonItems.forEach(lesson => lesson.classList.remove('active'));
+                  this.classList.add('active');
+              });
+          });
+      });
+  </script>
+</body>
+</html>
+

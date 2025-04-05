@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Reklama Kursi | Sarget</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/course-detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+      <div class="container">
+          <div class="header-content">
+              <a href="../index.html" class="logo">
+                  <div class="logo-circle"></div>
+                  <span>Sarget</span>
+              </a>
+              
+              <nav class="nav-desktop">
+                  <ul class="nav-links">
+                      <li><a href="../index.html" class="nav-link">Bosh sahifa</a></li>
+                      <li><a href="../courses.html" class="nav-link active">Kurslar</a></li>
+                      <li><a href="../about.html" class="nav-link">Biz haqimizda</a></li>
+                      <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                      <li><a href="../contact.html" class="nav-link">Aloqa</a></li>
+                  </ul>
+              </nav>
+              
+              <div id="authButtons" class="auth-buttons">
+                  <a href="../login.html" class="btn btn-ghost btn-sm">Kirish</a>
+                  <a href="../register.html" class="btn btn-primary btn-sm">Ro'yxatdan o'tish</a>
+              </div>
+              
+              <div id="userMenu" class="user-menu hidden">
+                  <button class="user-menu-button">
+                      <i class="fas fa-user-circle"></i>
+                      <span id="userName">Foydalanuvchi</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="user-dropdown">
+                      <a href="../dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                      <a href="../profile.html"><i class="fas fa-user"></i> Profil</a>
+                      <a href="../my-courses.html"><i class="fas fa-graduation-cap"></i> Mening kurslarim</a>
+                      <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Chiqish</a>
+                  </div>
+              </div>
+              
+              <button id="mobileMenuButton" class="mobile-menu-button">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+      </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+      <div class="container">
+          <ul class="mobile-nav-links">
+              <li><a href="../index.html">Bosh sahifa</a></li>
+              <li><a href="../courses.html" class="active">Kurslar</a></li>
+              <li><a href="../about.html">Biz haqimizda</a></li>
+              <li><a href="../blog.html">Blog</a></li>
+              <li><a href="../contact.html">Aloqa</a></li>
+          </ul>
+          
+          <div id="mobileAuth" class="mobile-auth">
+              <a href="../login.html" class="btn btn-ghost btn-block">Kirish</a>
+              <a href="../register.html" class="btn btn-primary btn-block">Ro'yxatdan o'tish</a>
+          </div>
+          
+          <div id="mobileUser" class="mobile-user hidden">
+              <a href="../dashboard.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-tachometer-alt"></i> Dashboard
+              </a>
+              <a href="../profile.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-user"></i> Profil
+              </a>
+              <a href="../my-courses.html" class="btn btn-ghost btn-block">
+                  <i class="fas fa-graduation-cap"></i> Mening kurslarim
+              </a>
+              <a href="#" id="mobileLogout" class="btn btn-ghost btn-block">
+                  <i class="fas fa-sign-out-alt"></i> Chiqish
+              </a>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Course Hero -->
+  <section class="course-hero">
+      <div class="container">
+          <div class="course-hero-content">
+              <div class="course-hero-info">
+                  <div class="course-badge">Eng mashhur</div>
+                  <h1 class="course-title">Target Reklama Kursi</h1>
+                  <p class="course-description">
+                      Ijtimoiy tarmoqlarda maqsadli reklama kampaniyalarini yaratish va boshqarishni o'rganing. Facebook, Instagram va boshqa platformalarda samarali reklama strategiyalarini ishlab chiqing.
+                  </p>
+                  <div class="course-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-user"></i>
+                          <span>400+ o'quvchilar</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-clock"></i>
+                          <span>2 oy</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-signal"></i>
+                          <span>Boshlang'ich darajadan</span>
+                      </div>
+                  </div>
+                  <div class="course-actions">
+                      <a href="target/payment.html" class="btn btn-primary btn-lg">Kursga yozilish</a>
+                      <a href="#curriculum" class="btn btn-outline btn-lg">Kurs dasturi</a>
+                  </div>
+              </div>
+              <div class="course-hero-image">
+                  <img src="../images/target-course.jpg" alt="Target Reklama Kursi">
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Course Overview -->
+  <section class="course-overview">
+      <div class="container">
+          <div class="course-overview-grid">
+              <div class="course-overview-content">
+                  <div class="course-tabs">
+                      <button class="tab-button active" data-tab="overview">Kurs haqida</button>
+                      <button class="tab-button" data-tab="curriculum">Kurs dasturi</button>
+                      <button class="tab-button" data-tab="instructor">O'qituvchi</button>
+                      <button class="tab-button" data-tab="reviews">Sharhlar</button>
+                  </div>
+                  
+                  <div id="overview-tab" class="tab-content active">
+                      <h2>Kurs haqida</h2>
+                      <p>
+                          Target reklama kursi ijtimoiy tarmoqlarda maqsadli reklama kampaniyalarini yaratish va boshqarishni o'rganishni xohlaganlar uchun mo'ljallangan. Kurs davomida siz Facebook, Instagram va boshqa platformalarda samarali reklama strategiyalarini ishlab chiqishni o'rganasiz.
+                      </p>
+                      <p>
+                          Kurs yakunida siz:
+                      </p>
+                      <ul class="course-features">
+                          <li><i class="fas fa-check"></i> Maqsadli auditoriyani aniqlashni</li>
+                          <li><i class="fas fa-check"></i> Facebook Ads Manager bilan ishlashni</li>
+                          <li><i class="fas fa-check"></i> Reklama kampaniyalarini yaratish va sozlashni</li>
+                          <li><i class="fas fa-check"></i> Reklama byudjetini boshqarishni</li>
+                          <li><i class="fas fa-check"></i> Reklama natijalarini tahlil qilishni</li>
+                          <li><i class="fas fa-check"></i> Reklama kampaniyalarini optimallashtirishni o'rganasiz</li>
+                      </ul>
+                      
+                      <h3>Kimlar uchun</h3>
+                      <ul class="course-features">
+                          <li><i class="fas fa-user"></i> Marketing sohasiga kirmoqchi bo'lganlar</li>
+                          <li><i class="fas fa-user"></i> O'z biznesini ijtimoiy tarmoqlarda rivojlantirmoqchi bo'lganlar</li>
+                          <li><i class="fas fa-user"></i> Target reklama mutaxassisi bo'lishni xohlaganlar</li>
+                          <li><i class="fas fa-user"></i> Freelancer bo'lishni xohlaganlar</li>
+                      </ul>
+                  </div>
+                  
+                  <div id="curriculum-tab" class="tab-content">
+                      <h2>Kurs dasturi</h2>
+                      <div class="curriculum-section">
+                          <div class="curriculum-section-header">
+                              <h3>1-modul: Target reklama asoslari</h3>
+                              <span>1 hafta</span>
+                          </div>
+                          <div class="curriculum-section-content">
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Target reklama haqida umumiy ma'lumot</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>45 daqiqa</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Maqsadli auditoriyani aniqlash</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-file-alt"></i>
+                                      <span>Amaliy mashg'ulot: Maqsadli auditoriyani aniqlash</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>2 soat</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="curriculum-section">
+                          <div class="curriculum-section-header">
+                              <h3>2-modul: Facebook Ads Manager</h3>
+                              <span>2 hafta</span>
+                          </div>
+                          <div class="curriculum-section-content">
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Facebook Ads Manager bilan tanishish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Reklama kampaniyasi tuzilishi</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1.5 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-file-alt"></i>
+                                      <span>Amaliy mashg'ulot: Birinchi reklama kampaniyasini yaratish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>2 soat</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="curriculum-section">
+                          <div class="curriculum-section-header">
+                              <h3>3-modul: Reklama kreativlari</h3>
+                              <span>2 hafta</span>
+                          </div>
+                          <div class="curriculum-section-content">
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Samarali reklama kreativlarini yaratish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Reklama matnlarini yozish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1.5 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-file-alt"></i>
+                                      <span>Amaliy mashg'ulot: Reklama kreativlarini yaratish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>2 soat</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="curriculum-section">
+                          <div class="curriculum-section-header">
+                              <h3>4-modul: Reklama natijalarini tahlil qilish</h3>
+                              <span>3 hafta</span>
+                          </div>
+                          <div class="curriculum-section-content">
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Reklama ko'rsatkichlari (KPI)</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>Facebook Analytics bilan ishlash</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>1.5 soat</span>
+                                  </div>
+                              </div>
+                              <div class="curriculum-item">
+                                  <div class="curriculum-item-left">
+                                      <i class="fas fa-file-alt"></i>
+                                      <span>Amaliy mashg'ulot: Reklama natijalarini tahlil qilish</span>
+                                  </div>
+                                  <div class="curriculum-item-right">
+                                      <span>2 soat</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div id="instructor-tab" class="tab-content">
+                      <h2>O'qituvchi haqida</h2>
+                      <div class="instructor-profile">
+                          <div class="instructor-image">
+                              <img src="../images/instructor-4.jpg" alt="Kamola Rakhimova">
+                          </div>
+                          <div class="instructor-info">
+                              <h3>Kamola Rakhimova</h3>
+                              <p class="instructor-title">Target reklama mutaxassisi, 4+ yillik tajriba</p>
+                              <div class="instructor-stats">
+                                  <div class="stat-item">
+                                      <i class="fas fa-user-graduate"></i>
+                                      <span>800+ o'quvchilar</span>
+                                  </div>
+                                  <div class="stat-item">
+                                      <i class="fas fa-star"></i>
+                                      <span>4.8 reyting</span>
+                                  </div>
+                                  <div class="stat-item">
+                                      <i class="fas fa-play-circle"></i>
+                                      <span>8 kurslar</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="instructor-bio">
+                          <p>
+                              Kamola Rakhimova - 4 yildan ortiq tajribaga ega target reklama mutaxassisi. U ko'plab brendlar va kompaniyalar bilan ishlagan va ularning ijtimoiy tarmoqlardagi reklama kampaniyalarini samarali boshqargan. Kamola o'z bilimlarini o'quvchilarga ulashishni yaxshi ko'radi va uning o'qitish uslubi juda tushunarli va amaliy.
+                          </p>
+                          <p>
+                              Kamola Facebook, Instagram va boshqa ijtimoiy tarmoqlarda targetlangan reklama kampaniyalarini yaratish va boshqarish bo'yicha ekspert hisoblanadi. U o'z kurslarida nazariy bilimlar bilan birga amaliy ko'nikmalarni ham o'rgatadi, bu esa o'quvchilarga real loyihalarda ishlash imkonini beradi.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div id="reviews-tab" class="tab-content">
+                      <h2>O'quvchilar sharhlari</h2>
+                      <div class="course-rating">
+                          <div class="rating-summary">
+                              <div class="rating-average">4.8</div>
+                              <div class="rating-stars">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                              </div>
+                              <div class="rating-count">95 sharhlar</div>
+                          </div>
+                          <div class="rating-bars">
+                              <div class="rating-bar-item">
+                                  <div class="rating-label">5 yulduz</div>
+                                  <div class="rating-bar">
+                                      <div class="rating-bar-fill" style="width: 85%;"></div>
+                                  </div>
+                                  <div class="rating-percent">85%</div>
+                              </div>
+                              <div class="rating-bar-item">
+                                  <div class="rating-label">4 yulduz</div>
+                                  <div class="rating-bar">
+                                      <div class="rating-bar-fill" style="width: 10%;"></div>
+                                  </div>
+                                  <div class="rating-percent">10%</div>
+                              </div>
+                              <div class="rating-bar-item">
+                                  <div class="rating-label">3 yulduz</div>
+                                  <div class="rating-bar">
+                                      <div class="rating-bar-fill" style="width: 3%;"></div>
+                                  </div>
+                                  <div class="rating-percent">3%</div>
+                              </div>
+                              <div class="rating-bar-item">
+                                  <div class="rating-label">2 yulduz</div>
+                                  <div class="rating-bar">
+                                      <div class="rating-bar-fill" style="width: 1%;"></div>
+                                  </div>
+                                  <div class="rating-percent">1%</div>
+                              </div>
+                              <div class="rating-bar-item">
+                                  <div class="rating-label">1 yulduz</div>
+                                  <div class="rating-bar">
+                                      <div class="rating-bar-fill" style="width: 1%;"></div>
+                                  </div>
+                                  <div class="rating-percent">1%</div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="reviews-list">
+                          <div class="review-item">
+                              <div class="review-header">
+                                  <div class="review-author">
+                                      <img src="../images/user-10.jpg" alt="Farida Karimova">
+                                      <div>
+                                          <h4>Farida Karimova</h4>
+                                          <div class="review-date">1 oy oldin</div>
+                                      </div>
+                                  </div>
+                                  <div class="review-rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                  </div>
+                              </div>
+                              <div class="review-content">
+                                  <p>
+                                      Juda ajoyib kurs! Men target reklama sohasida noldan boshladim va hozir bir nechta mijozlar bilan ishlayman. O'qituvchi juda yaxshi tushuntiradi va har doim yordam beradi. Kursni tavsiya qilaman!
+                                  </p>
+                              </div>
+                          </div>
+                          
+                          <div class="review-item">
+                              <div class="review-header">
+                                  <div class="review-author">
+                                      <img src="../images/user-11.jpg" alt="Otabek Yusupov">
+                                      <div>
+                                          <h4>Otabek Yusupov</h4>
+                                          <div class="review-date">2 oy oldin</div>
+                                      </div>
+                                  </div>
+                                  <div class="review-rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                  </div>
+                              </div>
+                              <div class="review-content">
+                                  <p>
+                                      Kurs juda mazmunli va amaliy. Men ko'p narsalarni o'rgandim va hozir o'z biznesim uchun reklama kampaniyalarini o'zim boshqaryapman. O'qituvchi har doim savollarimga javob beradi va qo'shimcha materiallar bilan ta'minlaydi.
+                                  </p>
+                              </div>
+                          </div>
+                          
+                          <div class="review-item">
+                              <div class="review-header">
+                                  <div class="review-author">
+                                      <img src="../images/user-12.jpg" alt="Lola Azimova">
+                                      <div>
+                                          <h4>Lola Azimova</h4>
+                                          <div class="review-date">3 hafta oldin</div>
+                                      </div>
+                                  </div>
+                                  <div class="review-rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                              </div>
+                              <div class="review-content">
+                                  <p>
+                                      Kurs juda foydali, ayniqsa reklama natijalarini tahlil qilish bo'yicha materiallar. Men Facebook va Instagram reklamalarini sozlashni o'rgandim va hozir bu ko'nikmalarni o'z biznesimda qo'llayapman. Rahmat!
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="course-sidebar">
+                  <div class="course-card">
+                      <div class="course-price">
+                          <span class="price-current">1,500,000 so'm</span>
+                          <span class="price-original">1,800,000 so'm</span>
+                          <span class="price-discount">16% chegirma</span>
+                      </div>
+                      <div class="course-includes">
+                          <h3>Kurs o'z ichiga oladi:</h3>
+                          <ul>
+                              <li><i class="fas fa-video"></i> 70+ video darslar</li>
+                              <li><i class="fas fa-file-alt"></i> 30+ amaliy mashg'ulotlar</li>
+                              <li><i class="fas fa-download"></i> Yuklab olish mumkin bo'lgan materiallar</li>
+                              <li><i class="fas fa-infinity"></i> Umrbod kirish</li>
+                              <li><i class="fas fa-mobile-alt"></i> Mobil va TV orqali kirish</li>
+                              <li><i class="fas fa-certificate"></i> Yakuniy sertifikat</li>
+                          </ul>
+                      </div>
+                      <a href="target/payment.html" class="btn btn-primary btn-block">Kursga yozilish</a>
+                      <div class="course-guarantee">
+                          <i class="fas fa-shield-alt"></i>
+                          <span>30 kunlik pul qaytarish kafolati</span>
+                      </div>
+                  </div>
+                  
+                  <div class="share-course">
+                      <h3>Kursni ulashing:</h3>
+                      <div class="social-share">
+                          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta">
+      <div class="container">
+          <div class="cta-content">
+              <h2 class="cta-title">Kelajagingizni bugun boshlang</h2>
+              <p class="cta-description">
+                  Bizning kurslarimiz orqali zamonaviy ko'nikmalarni egallang va marketing sohasida muvaffaqiyatga erishing.
+              </p>
+              <div class="cta-buttons">
+                  <a href="target/payment.html" class="btn btn-primary btn-lg">Kursga yozilish</a>
+                  <a href="../contact.html" class="btn btn-outline-light btn-lg">Biz bilan bog'lanish</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-grid">
+              <div class="footer-col">
+                  <div class="footer-logo">
+                      <div class="logo-circle"></div>
+                      <span>Sarget</span>
+                  </div>
+                  <p class="footer-description">
+                      Sarget - bu zamonaviy kasblarni o'rgatuvchi ta'lim platformasi. Biz bilan kelajak kasblarini o'rganing va muvaffaqiyatga erishing.
+                  </p>
+                  <div class="footer-contact">
+                      <div class="contact-item">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Toshkent sh., Shayxontohur tumani, Beruniy ko'chasi, 3A-uy</span>
+                      </div>
+                      <div class="contact-item">
+                          <i class="fas fa-phone-alt"></i>
+                          <span>+998 90 123 45 67</span>
+                      </div>
+                      <div class="contact-item">
+                          <i class="fas fa-envelope"></i>
+                          <span>info@sarget.uz</span>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="footer-col">
+                  <h3 class="footer-title">Kurslar</h3>
+                  <div class="footer-links">
+                      <a href="frontend.html">Frontend dasturlash</a>
+                      <a href="backend.html">Backend dasturlash</a>
+                   
+                      <a href="smm.html">SMM</a>
+                      <a href="target.html">Target reklama</a>
+                      <a href="mobilografiya.html">Mobilografiya</a>
+                      <a href="grafik-dizayn.html">Grafik dizayn</a>
+                      <a href="kompyuter-savodxonligi.html">Kompyuter savodxonligi</a>
+                      <a href="../courses.html">Barcha kurslar</a>
+                  </div>
+              </div>
+              
+              <div class="footer-col">
+                  <h3 class="footer-title">Kompaniya</h3>
+                  <div class="footer-links">
+                      <a href="../blog.html">Blog</a>
+                      <a href="../contact.html">Aloqa</a>
+                  </div>
+              </div>
+              
+              <div class="footer-col">
+                  <h3 class="footer-title">Yangiliklardan xabardor bo'ling</h3>
+                  <p class="footer-description">
+                      Yangiliklardan xabardor bo'lish uchun obuna bo'ling
+                  </p>
+                  <form class="newsletter-form">
+                      <input type="email" placeholder="Email manzilingiz" required>
+                      <button type="submit" class="btn btn-primary">Obuna bo'lish</button>
+                  </form>
+              </div>
+          </div>
+          
+          <div class="footer-divider"></div>
+          
+          <div class="footer-bottom">
+              <div class="social-links">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+              </div>
+              
+              <div class="copyright">
+                  <p>&copy; <span id="currentYear">2023</span> Sarget. Barcha huquqlar himoyalangan.</p>
+                  <div class="legal-links">
+                      <a href="../terms.html">Foydalanish shartlari</a>
+                      <a href="../privacy.html">Maxfiylik siyosati</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab switching functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = this.getAttribute('data-tab') + '-tab';
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
+

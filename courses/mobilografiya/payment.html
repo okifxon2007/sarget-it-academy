@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurs uchun to'lov | Sarget</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/payment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+      <div class="container">
+          <div class="header-content">
+              <a href="../../index.html" class="logo">
+                  <div class="logo-circle"></div>
+                  <span>Sarget</span>
+              </a>
+          </div>
+      </div>
+  </header>
+  
+  <!-- Payment Content -->
+  <div class="payment-container">
+      <div class="container">
+          <a href="../frontend.html" class="back-link">
+              <i class="fas fa-arrow-left"></i> Kursga qaytish
+          </a>
+          
+          <h1 class="page-title">Kurs uchun to'lov</h1>
+          
+          <div class="payment-grid">
+              <!-- Course Summary -->
+              <div class="course-summary">
+                  <div class="summary-header">
+                      <h3>Buyurtma ma'lumotlari</h3>
+                  </div>
+                  
+                  <div class="course-image">
+                      <img src="../../images/frontend-course.jpg" alt="Frontend Dasturlash Kursi">
+                  </div>
+                  
+                  <div class="summary-content">
+                      <h3 class="course-title">Kurs uchun tolov</h3>
+                      
+                      <div class="course-details">
+                          <div class="detail-row">
+                              <span>Davomiyligi:</span>
+                              <span>6 oy</span>
+                          </div>
+                          <div class="detail-row">
+                              <span>Daraja:</span>
+                              <span>Boshlang'ich darajadan</span>
+                          </div>
+                          <div class="detail-row">
+                              <span>O'qituvchi:</span>
+                              <span>Aziz Rahimov</span>
+                          </div>
+                      </div>
+                      
+                      <div class="summary-divider"></div>
+                      
+                      <div class="course-total">
+                          <span>Jami:</span>
+                          <span>1,200,000 so'm</span>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- Payment Form -->
+              <div class="payment-form-container">
+                  <div class="payment-header">
+                      <h3>To'lov ma'lumotlari</h3>
+                  </div>
+                  
+                  <div class="payment-content">
+                      <div id="paymentSuccess" class="alert alert-success hidden">
+                          <i class="fas fa-check-circle"></i>
+                          <span>To'lov muvaffaqiyatli amalga oshirildi! Kursga yo'naltirilmoqdasiz...</span>
+                      </div>
+                      
+                      <div id="paymentError" class="alert alert-danger hidden"></div>
+                      
+                      <form id="paymentForm">
+                          <div class="form-group">
+                              <label>To'lov usulini tanlang</label>
+                              <div class="payment-methods">
+                                  <div class="payment-method active" data-method="card">
+                                      <input type="radio" name="paymentMethod" id="card" value="card" checked>
+                                      <label for="card">
+                                          <div class="payment-method-icon">
+                                              <i class="fas fa-credit-card"></i>
+                                          </div>
+                                          <span>Bank karta</span>
+                                      </label>
+                                  </div>
+                                  
+                                  <div class="payment-method" data-method="click">
+                                      <input type="radio" name="paymentMethod" id="click" value="click">
+                                      <label for="click">
+                                          <div class="payment-method-icon">
+                                              <i class="fas fa-mobile-alt"></i>
+                                          </div>
+                                          <span>Click</span>
+                                      </label>
+                                  </div>
+                                  
+                                  <div class="payment-method" data-method="payme">
+                                      <input type="radio" name="paymentMethod" id="payme" value="payme">
+                                      <label for="payme">
+                                          <div class="payment-method-icon">
+                                              <i class="fas fa-wallet"></i>
+                                          </div>
+                                          <span>Payme</span>
+                                      </label>
+                                  </div>
+                                  
+                                  <div class="payment-method" data-method="cash">
+                                      <input type="radio" name="paymentMethod" id="cash" value="cash">
+                                      <label for="cash">
+                                          <div class="payment-method-icon">
+                                              <i class="fas fa-money-bill-wave"></i>
+                                          </div>
+                                          <span>Naqd pul</span>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div id="cardDetails" class="card-details">
+                              <div class="form-group">
+                                  <label for="cardNumber">Karta raqami</label>
+                                  <input type="text" id="cardNumber" class="form-control" placeholder="0000 0000 0000 0000" required>
+                              </div>
+                              
+                              <div class="card-row">
+                                  <div class="form-group">
+                                      <label for="expiryDate">Amal qilish muddati</label>
+                                      <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                      <label for="cvv">CVV</label>
+                                      <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="cardholderName">Karta egasining ismi</label>
+                                  <input type="text" id="cardholderName" class="form-control" placeholder="JOHN DOE" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <button type="submit" id="payButton" class="btn btn-primary btn-block">
+                                  1,200,000 so'm to'lash
+                              </button>
+                          </div>
+                          
+                          <p class="terms-text">
+                              "To'lash" tugmasini bosish orqali siz rozilik bildirasiz.
+                          </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Success Container (Hidden by default) -->
+  <div id="successContainer" class="container hidden">
+      <div class="success-container">
+          <div class="success-icon">
+              <i class="fas fa-check"></i>
+          </div>
+          <h2 class="success-title">To'lov muvaffaqiyatli amalga oshirildi!</h2>
+          <p class="success-message">
+              Tabriklaymiz! Siz "Frontend Dasturlash" kursiga muvaffaqiyatli ro'yxatdan o'tdingiz.
+          </p>
+          <a href="video.html" class="btn btn-primary btn-lg">
+              Kursni boshlash
+          </a>
+      </div>
+  </div>
+  
+  <script src="../../js/auth.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Check if user is authenticated
+          const token = localStorage.getItem('auth_token');
+          if (!token) {
+              // Redirect to login if not authenticated
+              window.location.href = '../../login.html?redirect=' + encodeURIComponent(window.location.href);
+          }
+          
+          // Payment method selection
+          const paymentMethods = document.querySelectorAll('.payment-method');
+          const cardDetails = document.getElementById('cardDetails');
+          
+          paymentMethods.forEach(method => {
+              method.addEventListener('click', function() {
+                  // Remove active class from all methods
+                  paymentMethods.forEach(m => m.classList.remove('active'));
+                  
+                  // Add active class to clicked method
+                  this.classList.add('active');
+                  
+                  // Check the radio button
+                  const radio = this.querySelector('input[type="radio"]');
+                  radio.checked = true;
+                  
+                  // Show/hide card details based on selected method
+                  if (radio.value === 'card') {
+                      cardDetails.style.display = 'block';
+                  } else {
+                      cardDetails.style.display = 'none';
+                  }
+              });
+          });
+          
+          // Card number formatting
+          const cardNumberInput = document.getElementById('cardNumber');
+          cardNumberInput.addEventListener('input', function(e) {
+              // Remove non-digits
+              let value = this.value.replace(/\D/g, '');
+              
+              // Add spaces after every 4 digits
+              value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+              
+              // Limit to 19 characters (16 digits + 3 spaces)
+              if (value.length > 19) {
+                  value = value.slice(0, 19);
+              }
+              
+              this.value = value;
+          });
+          
+          // Expiry date formatting
+          const expiryDateInput = document.getElementById('expiryDate');
+          expiryDateInput.addEventListener('input', function(e) {
+              // Remove non-digits
+              let value = this.value.replace(/\D/g, '');
+              
+              // Add slash after first 2 digits
+              if (value.length > 2) {
+                  value = value.slice(0, 2) + '/' + value.slice(2);
+              }
+              
+              // Limit to 5 characters (MM/YY)
+              if (value.length > 5) {
+                  value = value.slice(0, 5);
+              }
+              
+              this.value = value;
+          });
+          
+          // CVV formatting
+          const cvvInput = document.getElementById('cvv');
+          cvvInput.addEventListener('input', function(e) {
+              // Remove non-digits
+              let value = this.value.replace(/\D/g, '');
+              
+              // Limit to 3 digits
+              if (value.length > 3) {
+                  value = value.slice(0, 3);
+              }
+              
+              this.value = value;
+          });
+          
+          // Form submission
+          const paymentForm = document.getElementById('paymentForm');
+          const payButton = document.getElementById('payButton');
+          const paymentError = document.getElementById('paymentError');
+          const paymentSuccess = document.getElementById('paymentSuccess');
+          const paymentContainer = document.querySelector('.payment-container');
+          const successContainer = document.getElementById('successContainer');
+          
+          paymentForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              // Reset error
+              paymentError.classList.add('hidden');
+              paymentError.textContent = '';
+              
+              // Get selected payment method
+              const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+              
+              // Validate card details if card payment method is selected
+              if (paymentMethod === 'card') {
+                  const cardNumber = cardNumberInput.value.replace(/\s/g, '');
+                  const expiryDate = expiryDateInput.value;
+                  const cvv = cvvInput.value;
+                  const cardholderName = document.getElementById('cardholderName').value;
+                  
+                  if (cardNumber.length !== 16) {
+                      paymentError.textContent = 'Karta raqami 16 raqamdan iborat bo\'lishi kerak';
+                      paymentError.classList.remove('hidden');
+                      return;
+                  }
+                  
+                  if (!expiryDate.match(/^\d{2}\/\d{2}$/)) {
+                      paymentError.textContent = 'Amal qilish muddati MM/YY formatida bo\'lishi kerak';
+                      paymentError.classList.remove('hidden');
+                      return;
+                  }
+                  
+                  if (cvv.length !== 3) {
+                      paymentError.textContent = 'CVV 3 raqamdan iborat bo\'lishi kerak';
+                      paymentError.classList.remove('hidden');
+                      return;
+                  }
+                  
+                  if (cardholderName.trim() === '') {
+                      paymentError.textContent = 'Karta egasining ismini kiriting';
+                      paymentError.classList.remove('hidden');
+                      return;
+                  }
+              }
+              
+              // Show loading state
+              payButton.disabled = true;
+              payButton.innerHTML = 'To\'lov amalga oshirilmoqda...';
+              
+              // Simulate API call
+              setTimeout(function() {
+                  // Show success message
+                  paymentSuccess.classList.remove('hidden');
+                  
+                  // Store course access in localStorage
+                  const purchasedCourses = JSON.parse(localStorage.getItem('purchased_courses') || '[]');
+                  if (!purchasedCourses.includes('frontend')) {
+                      purchasedCourses.push('frontend');
+                      localStorage.setItem('purchased_courses', JSON.stringify(purchasedCourses));
+                  }
+                  
+                  // Show success container after 1 second
+                  setTimeout(function() {
+                      paymentContainer.classList.add('hidden');
+                      successContainer.classList.remove('hidden');
+                  }, 1000);
+              }, 2000);
+          });
+      });
+  </script>
+</body>
+</html>
+

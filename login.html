@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tizimga kirish - Sarget Ta'lim</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Sarget Ta'lim">
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                 
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-login">Kirish</a>
+                    <a href="register.html" class="btn btn-register">Ro'yxatdan o'tish</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="auth-container">
+            <div class="auth-header">
+                <h1>Tizimga kirish</h1>
+                <p>Sarget ta'lim platformasiga xush kelibsiz</p>
+            </div>
+
+            <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="phone">Telefon raqam</label>
+                    <div class="phone-input-group">
+                        <div class="phone-prefix">+998</div>
+                        <input type="tel" id="phone" placeholder="90 123 45 67" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-footer">
+                        <label for="password">Parol</label>
+                        <a href="forgot-password.html">Parolni unutdingizmi?</a>
+                    </div>
+                    <div class="password-field">
+                        <input type="password" id="password" placeholder="••••••••" required>
+                        <button type="button" class="password-toggle" id="password-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Kirish</button>
+            </form>
+
+            <div class="auth-footer">
+                Hisobingiz yo'qmi? <a href="register.html">Ro'yxatdan o'tish</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    
+                    <p>Zamonaviy kasblarni o'rganish va IT sohasida o'z o'rningizni topish uchun sifatli ta'lim.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Asosiy</h3>
+                        <ul>
+                            <li><a href="index.html">Bosh sahifa</a></li>
+                            <li><a href="courses.html">Kurslar</a></li>
+                            <li><a href="success-stories.html">Muvaffaqiyat tarixi</a></li>
+                          
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Qo'shimcha</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Aloqa</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Aloqa</h3>
+                        <ul>
+                            <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
+                            <li><a href="mailto:info@sarget.uz">info@sarget.uz</a></li>
+                            <li>Toshkent sh., Yunusobod tumani</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sarget Ta'lim. Barcha huquqlar himoyalangan.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePassword = document.getElementById('password-toggle');
+            const passwordInput = document.getElementById('password');
+            
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    
+                    // Toggle icon using class names directly
+                    if (type === 'password') {
+                        togglePassword.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+                    } else {
+                        togglePassword.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.98 9.98A5 5 0 0 0 12 15a5 5 0 0 0 2.02-5.02m6.06-.94A9.91 9.91 0 0 0 12 4c-7 0-11 8-11 8a18.5 18.5 0 0 0 5.06 5.94"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>`;
+                    }
+                });
+            }
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    // Remove non-digits
+                    let value = this.value.replace(/\D/g, '');
+                    
+                    // Limit to 9 digits (Uzbek number without +998)
+                    if (value.length > 9) {
+                        value = value.slice(0, 9);
+                    }
+                    
+                    this.value = value;
+                });
+            }
+            
+            // Form submission
+            const loginForm = document.getElementById('login-form');
+            const loginError = document.getElementById('error-message');
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Reset error
+                    loginError.style.display = 'none';
+                    loginError.textContent = '';
+                    
+                    // Get form values
+                    const phone = phoneInput.value;
+                    const password = passwordInput.value;
+                    
+                    // Validate phone number
+                    if (phone.length !== 9) {
+                        loginError.textContent = 'Telefon raqami 9 raqamdan iborat bo\'lishi kerak';
+                        loginError.style.display = 'block';
+                        return;
+                    }
+                    
+                    // Validate password
+                    if (password.length < 6) {
+                        loginError.textContent = 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak';
+                        loginError.style.display = 'block';
+                        return;
+                    }
+                    
+                    // Show loading state - No loading state update in updated code
+                    
+                    // Simulate API call
+                    setTimeout(function() {
+                        // In a real app, this would be an API call
+                        // For demo, we'll just simulate a successful login
+                        
+                        // Store auth data in localStorage
+                        localStorage.setItem('auth_token', 'sample_token_' + Date.now());
+                        localStorage.setItem('user_phone', phone);
+                        localStorage.setItem('user_name', 'Foydalanuvchi');
+                        
+                        // Redirect to home page
+                        window.location.href = 'index.html';
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
